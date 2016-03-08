@@ -1,7 +1,9 @@
 from manchester import decode
 from parseImage import parse
+import numpy
 
-string = parse("test.jpg")
+arr = parse("test.jpg")
 
-print decode(string)
+
+print decode(arr)
 
