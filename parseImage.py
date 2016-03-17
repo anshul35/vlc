@@ -10,7 +10,7 @@ def parse(filename):
     signal_arr = np.sum(img, 0)
 
     cv2.imshow('orig', img)
-    THRESHOLD = np.mean(signal_arr)
+    THRESHOLD = np.median(signal_arr)
     signal_arr_channel = signal_arr
     low_values_indices = signal_arr_channel < THRESHOLD 
     high_values_indices = signal_arr_channel >= THRESHOLD
@@ -26,4 +26,4 @@ def parse(filename):
 
 if __name__ == "__main__":
     parse("test.jpg")
-    
+
