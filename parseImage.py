@@ -4,8 +4,9 @@ import matplotlib.pyplot as plt
 
 def parse(filename):
     im_gray = cv2.imread(filename)
-    signal_arr = np.sum(im_gray, 1)
-    signal_arr_channel = signal_arr[:,1]
+    im_gray = cv2.cvtColor(im_gray, cv2.COLOR_BGR2GRAY)
+    signal_arr = np.sum(im_gray, 0)
+    signal_arr_channel = signal_arr
     low_values_indices = signal_arr_channel < 100
     high_values_indices = signal_arr_channel >= 100
 
@@ -17,6 +18,6 @@ def parse(filename):
     plt.show()
     return signal_arr_channel
 
-if __name__ == "__main__":
+if __name__ == "__main__"
     parse("test.jpg")
     
